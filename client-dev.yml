@@ -25,6 +25,7 @@ logging:
     org.springframework.cloud: 'DEBUG'
     com.mlorenzo: 'DEBUG'
 
+---
 
 spring:
   profiles: test
