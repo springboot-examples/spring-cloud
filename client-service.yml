@@ -1,0 +1,66 @@
+
+spring:
+  profiles: dev
+  http:
+      converters:
+        preferred-json-mapper: gson
+  gson:
+    pretty-printing: true
+  application:
+    name: config-server
+  datasource:
+    url: jdbc:mysql://tarjeticstore.ckkrkxfrt10h.us-east-1.rds.amazonaws.com:3306/bd_tarjetic?useSSL=false
+    username: admin
+    password: giacia12
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
+server:
+  port: 8092
+config:
+  key: dev
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.mlorenzo: 'DEBUG'
+
+---
+
+spring:
+  profiles: test
+  http:
+      converters:
+        preferred-json-mapper: gson
+  gson:
+    pretty-printing: true
+  application:
+    name: config-server
+  datasource:
+    url: jdbc:mysql://tarjeticstore.ckkrkxfrt10h.us-east-1.rds.amazonaws.com:3306/bd_tarjetic?useSSL=false
+    username: admin
+    password: giacia12
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
+server:
+  port: 8092
+config:
+  key: dev
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.mlorenzo: 'DEBUG'
+
+
