@@ -1,7 +1,6 @@
-server:
-  port: 8091
 
 spring:
+  profiles: dev
   http:
       converters:
         preferred-json-mapper: gson
@@ -15,20 +14,14 @@ spring:
     password: giacia12
     testWhileIdle: true
     validationQuery: SELECT 1
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/springboot-examples/spring-cloud
-          #username: tavo.tf@gmail.com
-          #password: 123456
-
+server:
+  port: 8091
 config:
   key: dev
-
 logging:
   file: logs/${spring.application.name}.log
   level:
     com.netflix.discovery: 'OFF'
     org.springframework.cloud: 'DEBUG'
     com.mlorenzo: 'DEBUG'
+
